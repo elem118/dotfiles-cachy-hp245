@@ -38,6 +38,10 @@
       "rev": "87114caeb33904d75163ba8dd35f275327a323b7",
       "src": "https://github.com/mrcjkb/haskell-tools.nvim"
     },
+    "indent-blankline.nvim": {
+      "rev": "d28a3f70721c79e3c5f6693057ae929f3d9c0a03",
+      "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
+    },
     "mason-lspconfig.nvim": {
       "rev": "21c5b3ebeaa0412e28096bb0701434c51c1fbf76",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
@@ -98,6 +102,10 @@
     "tokyonight.nvim": {
       "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
       "src": "https://github.com/folke/tokyonight.nvim"
+    },
+    "vim-remotions": {
+      "rev": "6b5b9a80a8e75dc221c7f3aeb79fa27a96262857",
+      "src": "https://github.com/vds2212/vim-remotions"
     },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
