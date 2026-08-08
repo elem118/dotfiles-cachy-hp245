@@ -21,13 +21,9 @@
 (defalias 
   ct_es (tap-next-release esc lctl)
   tab_met (tap-next-release tab lmet)
-  ;; to_l1 (layer-toggle l1)
   to_l1 (sticky-key 500 (layer-toggle l1))
   to_l3 (sticky-key 500 (layer-toggle l3))
   to_l2 (sticky-key 500 (layer-toggle l2))
-  ;; comp_to_l1 (tap-hold 250 (layer-toggle l1) (layer-switch l1))
-  ;; comp_to_l3 (tap-hold 250 (layer-toggle l1) (layer-switch l3))
-  ;; comp_to_l2 (tap-hold 250 (layer-toggle l1) (layer-switch l2))
   tm (sticky-key 500 (layer-toggle macros))
   m1 #(s y e d . m u z t a b a . a l i . 9 8 @ g m a i l . c o m :delay 2) 
   m2 #(e l e m e n t a r y c o d e r 1 @ g m a i l . c o m :delay 2)
@@ -53,7 +49,7 @@
   @tab_met  S-q  S-w  S-e  S-r  S-t  S-y  S-u  S-i  S-o  S-p  @to_l2   lalt   XX  pgup
   @ct_es    S-a  S-s  S-d  S-f  S-g  S-h  S-j  S-k  S-l  S-;  @to_l1   S-ret      pgdn
   bspc      S-z  S-x  S-c  S-v  S-b  S-n  S-m  ,    ^    @to_l3   rsft          end
-  caps      fn   lmet lalt           spc            ralt rctl
+  caps      fn   lmet lalt           S-spc          ralt rctl
 )
 
 (deflayer l2
