@@ -1,11 +1,5 @@
 require 'options'
 require 'keymaps'
-
--- =======================================
--- MY SCRIPTS
--- =======================================
-require('scripts.tmux')
-
 require 'plugins.setup'
 function gh(repo) return 'https://github.com/' .. repo end
 require 'plugins.core'
@@ -39,3 +33,9 @@ end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- =======================================
+-- MY SCRIPTS
+-- =======================================
+require('scripts.tmux')
+require 'scripts.haskell_treesitter_stop'
