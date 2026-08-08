@@ -22,8 +22,6 @@ do
 
   -- Make line numbers default
   vim.o.number = true
-  -- You can also add relative line numbers, to help with jumping.
-  --  Experiment for yourself to see if you like it!
   -- vim.o.relativenumber = true
 
   -- Enable mouse mode, can be useful for resizing splits for example!
@@ -33,9 +31,6 @@ do
   vim.o.showmode = false
 
   -- Sync clipboard between OS and Neovim.
-  --  Schedule the setting after `UiEnter` because it can increase startup-time.
-  --  Remove this option if you want your OS clipboard to remain independent.
-  --  See `:help 'clipboard'`
   vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
   -- Enable break indent
@@ -156,8 +151,16 @@ do
   vim.keymap.set("n", "<leader>rch", ":e ~/.config/hypr/hyprland.lua<CR>", { desc = "Configure Hyprland" })
   vim.keymap.set("n", "<leader>rcz", ":e ~/.zshrc<CR>", { desc = "Configure zsh" })
   vim.keymap.set("n", "<leader>rct", ":e ~/.tmux.conf<CR>", { desc = "Configure tmux" })
+  vim.keymap.set("n", "<leader>rck", ":e ~/.config/kmonad/elempad_2.kbd<CR>", { desc = "Configure kmonad config" })
+
+  vim.keymap.set("n", "<leader>pwd", ":lcd %:h", { desc = "Change directory of current window to current file location" })
 
 end
+
+-- =======================================
+-- My Scripts
+-- =======================================
+require('scripts.tmux')
 
 -- ============================================================
 -- SECTION 3: PLUGIN MANAGER INTRO
