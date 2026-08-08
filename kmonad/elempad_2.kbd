@@ -1,0 +1,81 @@
+(defcfg
+  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  output (uinput-sink "My KMonad output"
+    "sleep 1 && setxkbmap -option compose:ralt")
+  cmp-seq ralt    
+  cmp-seq-delay 500 
+  key-seq-delay 5
+  fallthrough true
+  allow-cmd true
+  implicit-around around
+)
+
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc home
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \    pgup
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret       pgdn
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft           end
+  lctl fn   lmet lalt           spc            ralt rctl
+)
+
+(defalias 
+  ct_es (tap-next-release esc lctl)
+  tab_met (tap-next-release tab lmet)
+  ;; to_l1 (layer-toggle l1)
+  to_l1 (sticky-key 500 (layer-toggle l1))
+  to_l3 (sticky-key 500 (layer-toggle l3))
+  to_l2 (sticky-key 500 (layer-toggle l2))
+  ;; comp_to_l1 (tap-hold 250 (layer-toggle l1) (layer-switch l1))
+  ;; comp_to_l3 (tap-hold 250 (layer-toggle l1) (layer-switch l3))
+  ;; comp_to_l2 (tap-hold 250 (layer-toggle l1) (layer-switch l2))
+  tm (sticky-key 500 (layer-toggle macros))
+  m1 #(s y e d . m u z t a b a . a l i . 9 8 @ g m a i l . c o m :delay 2) 
+  m2 #(e l e m e n t a r y c o d e r 1 @ g m a i l . c o m :delay 2)
+  m3 #(m u z t a b a . t e c h f e s t @ g m a i l . c o m :delay 2)
+  m4 #(s p a m 4 f r e e @ p r o t o n m a i l . c o m :delay 2)
+  m5 #(s y e d . m u z t a b a . a l i @ o u t l o o k . c o m :delay 2)
+  m6 #(a l e x a n d e r 4 u @ o u t l o o k . c o m :delay 2)
+  m7 #(C X M P A 9 8 2 8 F :delay 2)
+  m8 #(7 9 8 0 8 6 8 9 4 3 :delay 2)
+  m9 #(4 6 9 9 2 5 3 3 0 2 7 3 :delay 2)
+)
+
+(deflayer l0
+  lsft      XX   @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3 XX  XX  XX  XX  home  
+  @tab_met  q    w    e    r    t    y    u    i    o    p    @to_l2   lalt   @tm  pgup
+  @ct_es    a    s    d    f    g    h    j    k    l    ;    @to_l1    ret     pgdn
+  bspc      z    x    c    v    b    n    m    .    \\   @to_l3    rsft         end
+  caps      fn   lmet lalt           spc            ralt rctl
+)
+
+(deflayer l1
+  lsft      XX  @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3   XX   XX   XX   XX  home  
+  @tab_met  S-q  S-w  S-e  S-r  S-t  S-y  S-u  S-i  S-o  S-p  @to_l2   lalt   XX  pgup
+  @ct_es    S-a  S-s  S-d  S-f  S-g  S-h  S-j  S-k  S-l  S-;  @to_l1   S-ret      pgdn
+  bspc      S-z  S-x  S-c  S-v  S-b  S-n  S-m  ,    ^    @to_l3   rsft          end
+  caps      fn   lmet lalt           spc            ralt rctl
+)
+
+(deflayer l2
+  lsft      XX  @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3   XX   XX   XX   XX  home  
+  @tab_met  1    2    3    4    5    6    7    8    9    0    @to_l2   lalt   XX  pgup
+  @ct_es    XX   XX   XX   XX   XX   XX   XX   XX   XX   '    @to_l1    ret     pgdn
+  bspc      -    =    XX   `    XX   ]    S-.  ?    S-]  @to_l3    rsft         end
+  caps      fn   lmet lalt           spc            ralt rctl
+)
+
+(deflayer l3
+  lsft      XX  @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3   XX   XX   XX   XX  home  
+  @tab_met  S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0  @to_l2   lalt   XX  pgup
+  @ct_es    XX   XX   XX   XX   XX   XX   XX   XX   XX   S-'  @to_l1   ret      pgdn
+  bspc      S--  S-=  S-\\ S-`  XX   [    S-,  /    S-[  @to_l3    rsft         end
+  caps      fn   lmet lalt           spc            ralt rctl
+)
+
+(deflayer macros
+  lsft      XX  @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3   XX   XX   XX   XX  home  
+  @tab_met  @m1  @m2  @m3  @m4  @m5  @m6  XX  XX  XX  XX   @to_l2    lalt    XX    XX
+  @ct_es    XX  XX  XX  XX  XX  XX  XX  XX  XX   XX    @to_l1    XX       XX
+  bspc      @m7  @m8  @m9  XX  XX  XX  XX   XX    XX    @to_l3    XX           XX
+  caps      XX   XX   XX           XX            XX XX
+)
