@@ -1,0 +1,13 @@
+map ctrl+shift+n next_window
+map ctrl+shift+] next_tab
+map ctrl+j scroll_line_down
+map ctrl+shift+j scroll_page_down
+map ctrl+k scroll_line_up
+map ctrl+shift+k scroll_page_up
+map ctrl+b set_tab_title
+
+
+# BEGIN_KITTY_THEME
+# Monokai Soda
+include current-theme.conf
+# END_KITTY_THEME
