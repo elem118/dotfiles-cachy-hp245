@@ -24,6 +24,7 @@ do
   -- require 'kickstart.plugins.gitsigns' -- adds gitsigns recommended keymaps
   require 'plugins.lucas-reineke_indent-blankline'
   require('plugins.mrcjkb_haskell-tools')
+  vim.pack.add { gh 'neovimhaskell/haskell-vim' }
   require('plugins.Olical_conjure')
   vim.pack.add { gh 'gpanders/nvim-parinfer' }
   vim.pack.add { gh 'HiPhish/rainbow-delimiters.nvim' }

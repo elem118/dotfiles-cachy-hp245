@@ -31,13 +31,15 @@ hl.window_rule({
 	no_focus = true,
 })
 
--- hl.window_rule({
---   name = "floating-windows-centered",
---   match = {
---   class = "^$",
---   title = "^$",
---     float = true,
---
+hl.window_rule({
+  name = "celluloid-window-floating-centered",
+  match = {
+    class = "^(io.github.celluloid_player.Celluloid)$",
+  },
+  size = {"(monitor_w*0.5)", "(monitor_h*0.5)"},
+  float = true,
+  center = true,
+})
 
 -- Layer rules also return a handle.
 -- local overlayLayerRule = hl.layer_rule({

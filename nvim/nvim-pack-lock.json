@@ -38,6 +38,10 @@
       "rev": "87114caeb33904d75163ba8dd35f275327a323b7",
       "src": "https://github.com/mrcjkb/haskell-tools.nvim"
     },
+    "haskell-vim": {
+      "rev": "f35d02204b4813d1dbe8b0e98cc39701a4b8e15e",
+      "src": "https://github.com/neovimhaskell/haskell-vim"
+    },
     "indent-blankline.nvim": {
       "rev": "d28a3f70721c79e3c5f6693057ae929f3d9c0a03",
       "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
