@@ -23,13 +23,13 @@ do
   -- require 'kickstart.plugins.neo-tree'
   -- require 'kickstart.plugins.gitsigns' -- adds gitsigns recommended keymaps
   require 'plugins.lucas-reineke_indent-blankline'
-  require('plugins.mrcjkb_haskell-tools')
+  require 'plugins.mrcjkb_haskell-tools'
   vim.pack.add { gh 'neovimhaskell/haskell-vim' }
-  require('plugins.Olical_conjure')
+  require 'plugins.Olical_conjure'
   vim.pack.add { gh 'gpanders/nvim-parinfer' }
   vim.pack.add { gh 'HiPhish/rainbow-delimiters.nvim' }
-  require('plugins.julienvincent_nvim-paredit')
-  require('plugins.vds2212_vim-remotions')
+  require 'plugins.julienvincent_nvim-paredit'
+  require 'plugins.vds2212_vim-remotions'
 end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
@@ -38,5 +38,7 @@ end
 -- =======================================
 -- MY SCRIPTS
 -- =======================================
-require('scripts.tmux')
+require 'scripts.tmux'
 require 'scripts.haskell_treesitter_stop'
+require 'scripts.waybar_reload'
+require 'scripts.kmonad_reload'

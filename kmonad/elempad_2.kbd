@@ -1,10 +1,12 @@
 (defcfg
   input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
-  output (uinput-sink "My KMonad output"
-    "sleep 1 && setxkbmap -option compose:ralt")
-  cmp-seq ralt    
-  cmp-seq-delay 500 
-  key-seq-delay 5
+  output (uinput-sink "My KMonad output")
+  ;; the following is only for the compose feature on x11. on wayland it is compositor specific. No universal way.
+  ;; output (uinput-sink "My KMonad output"
+  ;;  "sleep 1 && setxkbmap -option compose:ralt")
+  ;; cmp-seq ralt    
+  ;; cmp-seq-delay 500 
+  ;; key-seq-delay 5
   fallthrough true
   allow-cmd true
   implicit-around around
@@ -19,8 +21,8 @@
 )
 
 (defalias 
-  ct_es (tap-next-release esc lctl)
-  tab_met (tap-next-release tab lmet)
+  ct_es (tap-hold-next-release 200 esc lctl)
+  tab_met (tap-hold-next-release 200 tab lmet)
   to_l1 (sticky-key 500 (layer-toggle l1))
   to_l3 (sticky-key 500 (layer-toggle l3))
   to_l2 (sticky-key 500 (layer-toggle l2))
