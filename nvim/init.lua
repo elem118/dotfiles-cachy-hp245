@@ -25,6 +25,7 @@ do
   require 'plugins.lucas-reineke_indent-blankline'
   require 'plugins.mrcjkb_haskell-tools'
   vim.pack.add { gh 'neovimhaskell/haskell-vim' }
+  vim.pack.add { gh 'mfussenegger/nvim-dap' }
   require 'plugins.Olical_conjure'
   vim.pack.add { gh 'gpanders/nvim-parinfer' }
   vim.pack.add { gh 'HiPhish/rainbow-delimiters.nvim' }
