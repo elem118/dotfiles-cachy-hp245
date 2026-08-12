@@ -4,6 +4,8 @@
 :set prompt-cont "\ESC[1;34mλ | \ESC[0m"
 -- :set -interactive-print=Text.Pretty.Simple.pPrint
 :set +m
+:set -fdefer-type-errors
+:set -fno-warn-deferred-type-errors 
 :def hoogle \s -> return $ ":! hoogle " ++ s
 :def hinfo \s -> return $ ":! hoogle --info " ++ s
 

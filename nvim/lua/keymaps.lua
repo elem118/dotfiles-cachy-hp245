@@ -65,6 +65,7 @@ do
   vim.keymap.set("n", "<leader>rch", ":e ~/.config/hypr/hyprland.lua<CR>", { desc = "Configure Hyprland" })
   vim.keymap.set("n", "<leader>rcz", ":e ~/.zshrc<CR>", { desc = "Configure zsh" })
   vim.keymap.set("n", "<leader>rct", ":e ~/.tmux.conf<CR>", { desc = "Configure tmux" })
+  vim.keymap.set("n", "<leader>rcg", ":e ~/.ghci<CR>", { desc = "Configure ghci" })
   vim.keymap.set("n", "<leader>rckm", ":e ~/.config/kmonad/elempad_2.kbd<CR>", { desc = "Configure kmonad config" })
   vim.keymap.set("n", "<leader>rcki", ":e ~/.config/kitty/kitty.conf<CR>", { desc = "Configure kitty config" })
 
