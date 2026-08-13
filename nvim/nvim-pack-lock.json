@@ -20,7 +20,7 @@
     },
     "elm-vim": {
       "rev": "4b71facd77297cb33bbb3b14894676cff0a9bd1d",
-      "src": "https://github.com/elmcast/elm-vim"
+      "src": "https://github.com/ElmCast/elm-vim"
     },
     "fidget.nvim": {
       "rev": "82404b196e73a00b1727a91903beef5ddc319d22",

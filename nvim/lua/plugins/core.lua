@@ -18,7 +18,6 @@ do
     },
   }
 
-  -- Useful plugin to show you pending keybinds.
   vim.pack.add { gh 'folke/which-key.nvim' }
   require('which-key').setup {
     -- Delay between pressing a key and opening which-key (milliseconds)
@@ -53,32 +52,18 @@ do
     MiniIcons.mock_nvim_web_devicons()
   end
 
-  -- Better Around/Inside textobjects
-  --
-  -- Examples:
-  --  - va)  - [V]isually select [A]round [)]paren
-  --  - yiiq - [Y]ank [I]nside [I]+1 [Q]uote
-  --  - ci'  - [C]hange [I]nside [']quote
   require('mini.ai').setup {
-    mappings = {
-      around_next = 'aa',
-      inside_next = 'ii',
-    },
+    -- mappings = {
+    --   around_next = 'aa',
+    --   inside_next = 'ii',
+    -- },
     n_lines = 500,
   }
 
-  -- Add/delete/replace surroundings (brackets, quotes, etc.)
-  --
-  -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-  -- - sd'   - [S]urround [D]elete [']quotes
-  -- - sr)'  - [S]urround [R]eplace [)] [']
   require('mini.surround').setup({
     search_method = 'cover_or_nearest'
   })
 
-  -- Simple and easy statusline.
-  --  You could remove this setup call if you don't like it,
-  --  and try some other statusline plugin
   local statusline = require 'mini.statusline'
   -- Set `use_icons` to true if you have a Nerd Font
   statusline.setup { use_icons = vim.g.have_nerd_font }

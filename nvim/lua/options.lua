@@ -85,5 +85,7 @@ do
   vim.o.softtabstop = 2
   vim.o.expandtab = true
 
+  vim.o.relativenumber = true
+
 end
 

@@ -31,6 +31,7 @@ do
   vim.pack.add { gh 'HiPhish/rainbow-delimiters.nvim' }
   require 'plugins.julienvincent_nvim-paredit'
   require 'plugins.vds2212_vim-remotions'
+  require 'plugins.ElmCast_elm-vim'
 end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
