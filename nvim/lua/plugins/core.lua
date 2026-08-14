@@ -71,10 +71,14 @@ do
   statusline.section_location = function() return '%2l:%-2v' end
 
   require('mini.jump2d').setup()
-  vim.keymap.set(
-    { 'n', 'x', 'o' },
-    '<CR>',
-    '<Cmd>lua MiniJump2d.start(MiniJump2d.builtin_opts.single_character)<CR>'
-  )
+  -- vim.keymap.set(
+  --   { 'n', 'x', 'o' },
+  --   '<CR>',
+  --   -- '<Cmd>lua MiniJump2d.start(MiniJump2d.builtin_opts.single_character)<CR>'
+  --   '<Cmd>lua MiniJump2d.start(MiniJump2d.builtin_opts.query)<CR>'
+  -- )
   --  Check out: https://github.com/nvim-mini/mini.nvim
+  vim.keymap.set({ 'n', 'x', 'o' }, '<CR>', function()
+    MiniJump2d.start(MiniJump2d.builtin_opts.query)
+  end, { desc = 'Sneak-like 2-char jump' })
 end
