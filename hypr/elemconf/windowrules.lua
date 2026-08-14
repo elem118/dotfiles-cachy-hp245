@@ -53,7 +53,14 @@ hl.window_rule({
 hl.window_rule({
 	name = "move-hyprland-run",
 	match = { class = "hyprland-run" },
-
 	move = "20 monitor_h-120",
 	float = true,
 })
+
+hl.window_rule({
+	name = "nvim-wl-anywhere",
+	match = { class = "nvim-wl-anywhere" },
+	size = {800,600},
+	float = true,
+})
+

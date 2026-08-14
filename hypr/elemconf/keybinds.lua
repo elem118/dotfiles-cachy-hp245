@@ -3,7 +3,7 @@
 ---- KEYBINDINGS ----
 ---------------------
 
-hl.bind("SUPER + Q", hl.dsp.exec_cmd(terminal))
+hl.bind("SUPER + Q", hl.dsp.exec_cmd("kitty tmux"))
 closeWindowBind = hl.bind("SUPER + C", hl.dsp.window.close())
 closeWindowBind:set_enabled(true)
 hl.bind(
@@ -13,6 +13,7 @@ hl.bind(
 hl.bind("SUPER + E", hl.dsp.exec_cmd(guiFileManager))
 hl.bind("SUPER + W", hl.dsp.exec_cmd(browser))
 hl.bind("SUPER + R", hl.dsp.exec_cmd(menu))
+hl.bind("SUPER + V", hl.dsp.exec_cmd("~/bin/nvim-wl-anywhere.sh --keystroke-mode --rm-tmp"))
 -- hl.bind("SUPER + T", hl.dsp.exec_cmd(guiFileManager))
 
 hl.bind("ALT + Q", hl.dsp.focus({ workspace = 1 }))
