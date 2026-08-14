@@ -4,7 +4,7 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 20, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 10, // Gaps between modules (4px)
+    "spacing": 13, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces"
@@ -39,16 +39,17 @@
        "all-outputs": true,
        "warp-on-scroll": false,
        "format": "{name}",
-       "format-icons": {
-           "1": "",
-           "2": "",
-           "3": "",
-           "4": "",
-           "5": "",
-           "urgent": "",
-           "focused": "",
-           "default": ""
-       }
+       // "format-icons": {
+       //     "1": "",
+       //     "2": "",
+       //     "3": "",
+       //     "4": "",
+       //     "5": "",
+       //     "urgent": "",
+       //     "focused": "",
+       //     "default": ""
+       // }
+       "on-click": "hyprctl eval 'hl.dsp.focus({ workspace = 1 })' " 
     },
     // "keyboard-state": {
     //     "numlock": true,
@@ -112,7 +113,7 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<small>{:%d-%m}</small>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {

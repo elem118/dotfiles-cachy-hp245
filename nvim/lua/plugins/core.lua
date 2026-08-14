@@ -70,7 +70,7 @@ do
 
   statusline.section_location = function() return '%2l:%-2v' end
 
-  require('mini.jump2d').setup()
+  -- require('mini.jump2d').setup()
   -- vim.keymap.set(
   --   { 'n', 'x', 'o' },
   --   '<CR>',
@@ -78,7 +78,38 @@ do
   --   '<Cmd>lua MiniJump2d.start(MiniJump2d.builtin_opts.query)<CR>'
   -- )
   --  Check out: https://github.com/nvim-mini/mini.nvim
+  -- vim.keymap.set({ 'n', 'x', 'o' }, '<CR>', function()
+  --   MiniJump2d.start(MiniJump2d.builtin_opts.query)
+  -- end, { desc = 'Sneak-like 2-char jump' })
+  require('mini.jump2d').setup({
+    view = {
+      dim = true,
+      n_steps_ahead = 2,
+    },
+    hooks = {
+      before_start = function() vim.cmd("normal! m'") end,  -- sets the ' mark for Ctrl-O
+    },
+  })
+  local function two_char_spotter()
+    local ok1, c1 = pcall(vim.fn.getcharstr)
+    if not ok1 or c1 == '\27' then return function() return {} end end
+    local ok2, c2 = pcall(vim.fn.getcharstr)
+    if not ok2 or c2 == '\27' then return function() return {} end end
+
+    local query = c1 .. c2
+    local pattern = vim.pesc(query)
+
+    -- the below produces errors so is commented out
+    -- Respect smartcase: lowercase query = case-insensitive, any uppercase = case-sensitive
+    -- if vim.o.ignorecase and vim.o.smartcase and query:match('%u') == nil then
+    --   pattern = '\\c' .. pattern
+    -- end
+    return MiniJump2d.gen_spotter.pattern(pattern)
+  end
   vim.keymap.set({ 'n', 'x', 'o' }, '<CR>', function()
-    MiniJump2d.start(MiniJump2d.builtin_opts.query)
+    MiniJump2d.start({
+      spotter = two_char_spotter(),
+      allowed_windows = { current = true, not_current = true }
+    })
   end, { desc = 'Sneak-like 2-char jump' })
 end
