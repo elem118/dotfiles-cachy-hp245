@@ -40,7 +40,7 @@ end
 -- =======================================
 -- MY SCRIPTS
 -- =======================================
-require 'scripts.tmux'
+require 'scripts.tmux_reload'
 require 'scripts.haskell_treesitter_stop'
 require 'scripts.waybar_reload'
 require 'scripts.kmonad_reload'
