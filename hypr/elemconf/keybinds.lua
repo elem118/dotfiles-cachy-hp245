@@ -14,7 +14,6 @@ hl.bind("SUPER + E", hl.dsp.exec_cmd(guiFileManager))
 hl.bind("SUPER + W", hl.dsp.exec_cmd(browser))
 hl.bind("SUPER + R", hl.dsp.exec_cmd(menu))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("~/bin/nvim-wl-anywhere.sh --keystroke-mode --rm-tmp"))
--- hl.bind("SUPER + T", hl.dsp.exec_cmd(guiFileManager))
 
 hl.bind("ALT + Q", hl.dsp.focus({ workspace = 1 }))
 hl.bind("ALT + W", hl.dsp.focus({ workspace = 2 }))
@@ -32,7 +31,9 @@ hl.bind("ALT + S", hl.dsp.layout("swapcol l")) -- move window to the left
 hl.bind("ALT + D", hl.dsp.layout("swapcol r")) -- move window to the right
 hl.bind("ALT + F", hl.dsp.window.move({ workspace = "e-1" })) -- move window up to prev workspace
 hl.bind("ALT + G", hl.dsp.window.move({ workspace = "e+1" })) -- move window down to next workspace
-hl.bind("ALT + Z", hl.dsp.window.move({ workspace = "empty" }))
+hl.bind("ALT + C", hl.dsp.window.move({ workspace = "empty" }))
+hl.bind("SUPER + code:60", hl.dsp.layout("colresize -0.2")) -- code:60 binds the less than sign
+hl.bind("SUPER + code:62", hl.dsp.layout("move +col")) -- code:60 binds the greater than sign
 
 hl.bind("SUPER + N", hl.dsp.submap("navigate"))
 

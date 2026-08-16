@@ -13,6 +13,7 @@
 import Data.List
 import Data.Char
 
+-- debugging related options
 :set -fdiagnostics-color=always
 :set stop :list
 :set -fbreak-on-exception

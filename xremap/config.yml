@@ -1,0 +1,23 @@
+modmap:
+  # - name: Caps to Esc/Ctrl_L
+  #   remap:
+  #     CapsLock:
+  #       held: Ctrl_L
+  #       alone: Esc
+  #       alone_timeout_millis: 150
+  # - name: Tab to Tab/LeftMeta
+  #   remap:
+  #     Tab:
+  #       held: LeftMeta
+  #       alone: Tab
+  #       alone_timeout_millis: 150
+  - name: Mouse remaps
+    device: 
+      only: "/dev/input/by-id/usb-E-Signal_USB_Gaming_Mouse-event-mouse"
+      # only: "/dev/input/event4"
+    remap:
+      # BTN_EXTRA: BTN_MIDDLE      # side button -> middle click
+      # BTN_SIDE: super-w          # remap a button to a key/shortcut instead
+      BTN_EXTRA:
+        held: Shift_L
+        alone: BTN_EXTRA
