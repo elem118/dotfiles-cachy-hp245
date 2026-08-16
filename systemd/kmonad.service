@@ -1,0 +1,13 @@
+[Unit]
+Description=kmonad keyboard remapper
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kmonad /home/elem/.config/kmonad/elempad_2.kbd
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
