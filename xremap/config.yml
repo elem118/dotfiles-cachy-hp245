@@ -21,3 +21,6 @@ modmap:
       BTN_EXTRA:
         held: Shift_L
         alone: BTN_EXTRA
+      BTN_SIDE:
+        held: Ctrl_L
+        alone: BTN_SIDE

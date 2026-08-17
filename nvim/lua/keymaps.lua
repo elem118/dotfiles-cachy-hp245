@@ -68,6 +68,7 @@ do
   vim.keymap.set("n", "<leader>rcg", ":e ~/.ghci<CR>", { desc = "Configure ghci" })
   vim.keymap.set("n", "<leader>rckm", ":e ~/.config/kmonad/elempad_2.kbd<CR>", { desc = "Configure kmonad config" })
   vim.keymap.set("n", "<leader>rcki", ":e ~/.config/kitty/kitty.conf<CR>", { desc = "Configure kitty config" })
+  vim.keymap.set("n", "<leader>rcx", ":e ~/.config/xremap/config.yml<CR>", { desc = "Configure xremap config"})
 
   vim.keymap.set("n", "<leader>pwd", ":lcd %:h<CR>", { desc = "Change directory of current window to current file location" })
 
