@@ -111,6 +111,10 @@
       "rev": "6b5b9a80a8e75dc221c7f3aeb79fa27a96262857",
       "src": "https://github.com/vds2212/vim-remotions"
     },
+    "vim-tmux-navigator": {
+      "rev": "e41c431a0c7b7388ae7ba341f01a0d217eb3a432",
+      "src": "https://github.com/christoomey/vim-tmux-navigator"
+    },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
       "src": "https://github.com/folke/which-key.nvim"
