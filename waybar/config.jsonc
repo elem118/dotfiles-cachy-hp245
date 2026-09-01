@@ -36,25 +36,12 @@
     ],
     // Modules configuration - the following block of code was commented out originally
     "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "warp-on-scroll": false,
-        // "format": "{name}",
-        // "format-icons": {
-        //     "1": "",
-        //     "2": "",
-        //     "3": "",
-        //     "4": "",
-        //     "5": "",
-        //     "urgent": "",
-        //     "focused": "",
-        //     "default": ""
-        // }
-        // I don't know if the one below actually works.
-        // "on-click-window": "hyprctl dispatch 'hl.dsp.focus({workspace=1})'"
+        "tooltip" : true,
+        "enable-bar-scroll": true,
+        // "on-scroll-up": "hyprctl dispatch workspace e+1",
+        // "on-scroll-down": "hyprctl dispatch workspace e-1",
     },
     "hyprland/window": {
-        // "format": {title},
         "max-length": 40
     },
     "keyboard-state": {
