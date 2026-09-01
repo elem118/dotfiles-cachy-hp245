@@ -72,5 +72,8 @@ do
 
   vim.keymap.set("n", "<leader>pwd", ":lcd %:h<CR>", { desc = "Change directory of current window to current file location" })
 
+  -- keybinds for working with lua
+  vim.keymap.set("n", "<leader>ur", ":!lua %<cr>", { desc = "Run current Lua file" })
+
 end
 

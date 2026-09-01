@@ -4,7 +4,7 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 20, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 13, // Gaps between modules (4px)
+    "spacing": 10, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces"
@@ -18,6 +18,7 @@
     "modules-right": [
         // "mpd",
         // "idle_inhibitor",
+        "keyboard-state",
         "network",
         "pulseaudio",
         // "power-profiles-daemon",
@@ -38,7 +39,7 @@
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{name}",
+        // "format": "{name}",
         // "format-icons": {
         //     "1": "",
         //     "2": "",
@@ -52,15 +53,19 @@
         // I don't know if the one below actually works.
         // "on-click-window": "hyprctl dispatch 'hl.dsp.focus({workspace=1})'"
     },
-    // "keyboard-state": {
-    //     "numlock": true,
-    //     "capslock": true,
-    //     "format": "{name} {icon}",
-    //     "format-icons": {
-    //         "locked": "",
-    //         "unlocked": ""
-    //     }
-    // },
+    "hyprland/window": {
+        // "format": {title},
+        "max-length": 40
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
     "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -112,10 +117,37 @@
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
         // }
     },
+    // "clock": {
+    //     // "timezone": "America/New_York",
+    //     "tooltip-format": "<small>{:%d-%m}</small>\n<tt><small>{calendar}</small></tt>",
+    //     "format-alt": "{:%Y-%m-%d}"
+    // },
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<small>{:%d-%m}</small>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%H:%M}  ",
+        "format-alt": "{:%A, %B %d, %Y (%R)} 󰃰 ",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"             : "month",
+            // "mode-mon-col"     : 3,
+            // "weeks-pos"        : "right",
+            "first-day-of-week": 1,
+            "on-scroll"        : 1,
+            "on-click-right"   : "mode",
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
     },
     "cpu": {
         "format": "{usage}% ",
@@ -139,6 +171,8 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}<span size='large'>☀</span>",
+        "tooltip": true,
+        "tooltip-format": "Brightness",
         "format-icons": [
             "",
             "",

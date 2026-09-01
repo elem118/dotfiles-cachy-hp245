@@ -48,6 +48,11 @@ do
       if client and client:supports_method('textDocument/inlayHint', event.buf) then
         map('<leader>th', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }) end, '[T]oggle Inlay [H]ints')
       end
+
+      vim.keymap.set('n', '<leader>td', function()
+        local enabled = vim.diagnostic.is_enabled()
+        vim.diagnostic.enable(not enabled)
+      end, { desc = "[T]oggle [d]iagnostics" })
     end,
   })
 
