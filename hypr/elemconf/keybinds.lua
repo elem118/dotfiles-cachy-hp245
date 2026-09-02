@@ -14,7 +14,7 @@ hl.bind("SUPER + E", hl.dsp.exec_cmd(guiFileManager))
 hl.bind("SUPER + W", hl.dsp.exec_cmd(browser))
 hl.bind("SUPER + R", hl.dsp.exec_cmd(menu))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("~/bin/nvim-wl-anywhere.sh --keystroke-mode --rm-tmp"))
-hl.bind("SUPER + D", hl.dsp.exec_cmd("nautilus ~/Books/'Cheat Sheets'/"))
+hl.bind("SUPER + A", hl.dsp.exec_cmd("nautilus ~/Books/'Cheat Sheets'/"))
 
 hl.bind("ALT + Q", hl.dsp.focus({ workspace = 1 }))
 hl.bind("ALT + W", hl.dsp.focus({ workspace = 2 }))
