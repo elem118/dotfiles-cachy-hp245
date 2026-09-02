@@ -9,7 +9,7 @@
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
-	hl.exec_cmd(terminal)
+	hl.exec_cmd("kitty tmux a -t start")
 	hl.exec_cmd("swaync")
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("hyprsunset")
