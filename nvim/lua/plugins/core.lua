@@ -31,6 +31,17 @@ do
       { 'gr', group = 'LSP Actions', mode = { 'n' } },
     },
   }
+  -- setting the colors of the which window
+  vim.api.nvim_create_autocmd("ColorScheme", {
+  group = vim.api.nvim_create_augroup("WhichKeyHighlight", { clear = true }),
+  callback = function()
+    vim.api.nvim_set_hl(0, "WhichKeyNormal", { bg = "#1e1e2e", fg = "#cdd6f4" })
+    vim.api.nvim_set_hl(0, "WhichKeyBorder", { fg = "#45475a", bg = "#1e1e2e" })
+    vim.api.nvim_set_hl(0, "WhichKeyTitle", { fg = "#a6e3a1" })
+  end,
+  })
+  -- Trigger it once at load
+  vim.api.nvim_exec_autocmds("ColorScheme", {})
 
   vim.pack.add { gh 'folke/tokyonight.nvim' }
   require('tokyonight').setup {

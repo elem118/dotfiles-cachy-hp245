@@ -17,15 +17,14 @@ do
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.debug'
-  -- require 'kickstart.plugins.indent_line'
-  -- require 'kickstart.plugins.lint'
-  -- require 'kickstart.plugins.autopairs'
+  require 'plugins.windwp_nvim-autopairs'
   -- require 'kickstart.plugins.neo-tree'
   -- require 'kickstart.plugins.gitsigns' -- adds gitsigns recommended keymaps
   require 'plugins.lucas-reineke_indent-blankline'
   require 'plugins.mrcjkb_haskell-tools'
   vim.pack.add { gh 'neovimhaskell/haskell-vim' }
   vim.pack.add { gh 'mfussenegger/nvim-dap' }
+  require 'plugins.mfussenegger_nvim-lint'
   require 'plugins.Olical_conjure'
   vim.pack.add { gh 'gpanders/nvim-parinfer' }
   vim.pack.add { gh 'HiPhish/rainbow-delimiters.nvim' }
