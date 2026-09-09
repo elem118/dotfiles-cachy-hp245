@@ -38,8 +38,64 @@ do
     vim.api.nvim_set_hl(0, "WhichKeyNormal", { bg = "#1e1e2e", fg = "#cdd6f4" })
     vim.api.nvim_set_hl(0, "WhichKeyBorder", { fg = "#45475a", bg = "#1e1e2e" })
     vim.api.nvim_set_hl(0, "WhichKeyTitle", { fg = "#a6e3a1" })
+    -- Apply the same colors to all floating windows (LSP, diagnostics, etc)
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e1e2e", fg = "#cdd6f4" })
+    vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#45475a", bg = "#1e1e2e" })
+    -- Apply the same colors to all pmenus
+    vim.api.nvim_set_hl(0, "Pmenu", { bg = "#1e1e2e", fg = "#cdd6f4" })
+    vim.api.nvim_set_hl(0, "PmenuKind", { bg = "#1e1e2e", fg = "#cdd6f4" })
+    vim.api.nvim_set_hl(0, "PmenuSel", { bg = "teal", fg = "black" })
+    vim.api.nvim_set_hl(0, "PmenuKindSel", { bg = "teal", fg = "black" })
+    vim.api.nvim_set_hl(0, "PmenuBorder", { fg = "#45475a", bg = "#1e1e2e" })
+    vim.api.nvim_set_hl(0, "PmenuSbar", { bg = "#1e1e2e" })
+    vim.api.nvim_set_hl(0, "PmenuThumb", { bg = "steelblue" })
   end,
   })
+  -- vim.api.nvim_create_autocmd("ColorScheme", {
+  -- group = vim.api.nvim_create_augroup("UnderstateFul", { clear = true }),
+  -- callback = function()
+  --   -- Base floating windows (which-key, LSP, etc)
+  --   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e1e2e", fg = "#cdd6f4" })
+  --   vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#45475a", bg = "#1e1e2e" })
+  --   -- Selection & Visual Mode (muted blue)
+  --   vim.api.nvim_set_hl(0, "Visual", { bg = "#313244", fg = "NONE" })
+  --   vim.api.nvim_set_hl(0, "VisualNOS", { bg = "#313244" })
+  --   -- Cursor Line (very subtle)
+  --   vim.api.nvim_set_hl(0, "CursorLine", { bg = "#262735" })
+  --   vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#89b4fa", bg = "#262735" })
+  --   -- Line Numbers (muted gray)
+  --   vim.api.nvim_set_hl(0, "LineNr", { fg = "#45475a" })
+  --   -- Scrollbar / Scrollbar Background
+  --   vim.api.nvim_set_hl(0, "PmenuSbar", { bg = "#262735" })
+  --   vim.api.nvim_set_hl(0, "PmenuThumb", { bg = "#45475a" })
+  --   -- Completion Menu (understated)
+  --   vim.api.nvim_set_hl(0, "Pmenu", { bg = "#262735", fg = "#bac2de" })
+  --   vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#313244", fg = "#a6e3a1", bold = true })
+  --   vim.api.nvim_set_hl(0, "PmenuKind", { bg = "#262735", fg = "#89b4fa" })
+  --   vim.api.nvim_set_hl(0, "PmenuExtra", { bg = "#262735", fg = "#74c7ec" })
+  --   -- Search Highlights (muted)
+  --   vim.api.nvim_set_hl(0, "Search", { bg = "#313244", fg = "#f5e0dc" })
+  --   vim.api.nvim_set_hl(0, "IncSearch", { bg = "#45475a", fg = "#eba0ac" })
+  --   -- Diagnostics (muted colors)
+  --   vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#f38ba8" })      -- soft red
+  --   vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = "#f9e2af" })       -- soft yellow
+  --   vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = "#89b4fa" })       -- soft blue
+  --   vim.api.nvim_set_hl(0, "DiagnosticHint", { fg = "#a6e3a1" })       -- soft green
+  --   -- Status Line (understated)
+  --   vim.api.nvim_set_hl(0, "StatusLine", { bg = "#262735", fg = "#bac2de" })
+  --   vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "#1e1e2e", fg = "#45475a" })
+  --   -- Spell Check (subtle underlines)
+  --   vim.api.nvim_set_hl(0, "SpellBad", { sp = "#f38ba8", undercurl = true })
+  --   vim.api.nvim_set_hl(0, "SpellCap", { sp = "#89b4fa", undercurl = true })
+  --   vim.api.nvim_set_hl(0, "SpellLocal", { sp = "#74c7ec", undercurl = true })
+  --   -- Folded (muted)
+  --   vim.api.nvim_set_hl(0, "Folded", { bg = "#262735", fg = "#89b4fa" })
+  --   -- Tab Bar (understated)
+  --   vim.api.nvim_set_hl(0, "TabLine", { bg = "#262735", fg = "#45475a" })
+  --   vim.api.nvim_set_hl(0, "TabLineSel", { bg = "#313244", fg = "#cdd6f4" })
+  --   vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#1e1e2e" })
+  -- end,
+  -- })
   -- Trigger it once at load
   vim.api.nvim_exec_autocmds("ColorScheme", {})
 

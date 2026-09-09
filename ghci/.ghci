@@ -1,19 +1,22 @@
 -- :set prompt "λ > "
--- you can add the loaded modules into prompt using %s
 :set prompt "\ESC[1;32mλ > \ESC[5 q"
 :set prompt-cont "\ESC[1;34mλ | \ESC[5 q"
--- :set -interactive-print=Text.Pretty.Simple.pPrint
 :set +m
 :set -fdefer-type-errors
 :set -fno-warn-deferred-type-errors 
+:set -Wno-type-defaults
+:set -Wno-incomplete-uni-patterns
+:set -Wno-unused-do-bind
+:set -Wno-operator-whitespace
+:set -Wno-missing-signatures
+
 :def hoogle \s -> return $ ":! hoogle " ++ s
 :def hinfo \s -> return $ ":! hoogle --info " ++ s
 
--- import Data.Map as Map
 import Data.List
 import Data.Char
 
 -- debugging related options
-:set -fdiagnostics-color=always
-:set stop :list
-:set -fbreak-on-exception
+-- :set -fdiagnostics-color=always
+-- :set stop :list
+-- :set -fbreak-on-exception

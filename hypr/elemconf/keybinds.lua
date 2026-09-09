@@ -13,8 +13,9 @@ hl.bind(
 hl.bind("SUPER + E", hl.dsp.exec_cmd(guiFileManager))
 hl.bind("SUPER + W", hl.dsp.exec_cmd(browser))
 hl.bind("SUPER + R", hl.dsp.exec_cmd(menu))
-hl.bind("SUPER + V", hl.dsp.exec_cmd("~/bin/nvim-wl-anywhere.sh --keystroke-mode --rm-tmp"))
+-- hl.bind("SUPER + V", hl.dsp.exec_cmd("~/bin/nvim-wl-anywhere.sh --keystroke-mode --rm-tmp"))
 hl.bind("SUPER + A", hl.dsp.exec_cmd("nautilus ~/Books/'Cheat Sheets'/"))
+hl.bind("SUPER + B", hl.dsp.exec_cmd("nautilus ~/Books/"))
 
 hl.bind("ALT + Q", hl.dsp.focus({ workspace = 1 }))
 hl.bind("ALT + W", hl.dsp.focus({ workspace = 2 }))
@@ -27,34 +28,34 @@ hl.bind("ALT + L", hl.dsp.focus({ direction = "right" }))
 hl.bind("ALT + J", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind("ALT + K", hl.dsp.focus({ workspace = "e-1" }))
 
-hl.bind("ALT + A", hl.dsp.focus({ workspace = "empty" }))
-hl.bind("ALT + S", hl.dsp.layout("swapcol l")) -- move window to the left
-hl.bind("ALT + D", hl.dsp.layout("swapcol r")) -- move window to the right
-hl.bind("ALT + F", hl.dsp.window.move({ workspace = "e-1" })) -- move window up to prev workspace
-hl.bind("ALT + G", hl.dsp.window.move({ workspace = "e+1" })) -- move window down to next workspace
-hl.bind("ALT + C", hl.dsp.window.move({ workspace = "empty" }))
-hl.bind("SUPER + period", hl.dsp.layout("colresize -0.1")) -- code:60 binds the less than sign
-hl.bind("SUPER + comma", hl.dsp.layout("colresize +0.1")) -- code:60 binds the less than sign
-hl.bind("SUPER + slash", hl.dsp.layout("fit active")) -- code:60 binds the less than sign
+hl.bind("ALT + SHIFT + E", hl.dsp.focus({ workspace = "empty" }))
+hl.bind("ALT + SHIFT + H", hl.dsp.layout("swapcol l")) -- move window to the left
+hl.bind("ALT + SHIFT + L", hl.dsp.layout("swapcol r")) -- move window to the right
+hl.bind("ALT + SHIFT + K", hl.dsp.window.move({ workspace = "e-1" })) -- move window up to prev workspace
+hl.bind("ALT + SHIFT + J", hl.dsp.window.move({ workspace = "e+1" })) -- move window down to next workspace
+hl.bind("ALT + M", hl.dsp.window.move({ workspace = "empty" }))
+hl.bind("ALT + period", hl.dsp.layout("colresize -0.1")) -- code:60 binds the less than sign
+hl.bind("ALT + comma", hl.dsp.layout("colresize +0.1")) -- code:60 binds the less than sign
+hl.bind("ALT + slash", hl.dsp.layout("fit active")) -- code:60 binds the less than sign
 -- hl.bind("SUPER + question", hl.dsp.layout("colresize 0.5")) -- code:60 binds the less than sign
 -- hl.bind("SUPER + comma", hl.dsp.layout("move +col")) -- code:60 binds the greater than sign
 
 hl.bind("SUPER + N", hl.dsp.submap("navigate"))
 
 hl.define_submap("navigate", function()
-	hl.bind("h", hl.dsp.focus({ direction = "left" }))
-	hl.bind("l", hl.dsp.focus({ direction = "right" }))
+	-- hl.bind("h", hl.dsp.focus({ direction = "left" }))
+	-- hl.bind("l", hl.dsp.focus({ direction = "right" }))
 	-- hl.bind("j", hl.dsp.focus({ direction = "down" }))
 	-- hl.bind("k", hl.dsp.focus({ direction = "up" }))
-	hl.bind("j", hl.dsp.focus({ workspace = "e+1" }))
-	hl.bind("k", hl.dsp.focus({ workspace = "e-1" }))
-    hl.bind("s", hl.dsp.layout("swapcol l"))
-    hl.bind("d", hl.dsp.layout("swapcol r"))
-	hl.bind("a", hl.dsp.focus({ workspace = "empty" }))
-	hl.bind("c", hl.dsp.window.move({ workspace = "empty" }))
-	hl.bind("f", hl.dsp.window.move({ workspace = "e+1" }))
-	hl.bind("g", hl.dsp.window.move({ workspace = "e-1" }))
-	hl.bind("o", hl.dsp.layout("togglesplit"))
+	-- hl.bind("j", hl.dsp.focus({ workspace = "e+1" }))
+	-- hl.bind("k", hl.dsp.focus({ workspace = "e-1" }))
+	hl.bind("h", hl.dsp.layout("swapcol l"))
+	hl.bind("l", hl.dsp.layout("swapcol r"))
+	hl.bind("e", hl.dsp.focus({ workspace = "empty" }))
+	hl.bind("m", hl.dsp.window.move({ workspace = "empty" }))
+	hl.bind("j", hl.dsp.window.move({ workspace = "e+1" }))
+	hl.bind("k", hl.dsp.window.move({ workspace = "e-1" }))
+	hl.bind("t", hl.dsp.layout("togglesplit"))
 	hl.bind("catchall", hl.dsp.focus({ workspace = "e" }))
 	hl.bind("escape", hl.dsp.submap("reset"))
 end)

@@ -28,3 +28,7 @@ vim.keymap.set('n', '<leader>hq', ht.repl.quit, { desc = 'Quit current repl' })
 --     vim.fn.jobstart("fast-tags -R .", { detach = true })
 --   end,
 -- })
+
+-- Custom keymaps
+vim.keymap.set('n', '<leader>hg', ':!ghc %<cr>', { desc = 'Compile current buffer'})
+vim.keymap.set('n', '<leader>hx', ':split<cr>:resize 10<cr>:term runhaskell %<cr>i', { desc = 'Execute current buffer'})

@@ -18,7 +18,7 @@ do
 
     -- Can switch between these as you prefer
     virtual_text = false, -- Text shows up at the end of the line
-    virtual_lines = true, -- Text shows up underneath the line, with virtual lines
+    virtual_lines = false, -- Text shows up underneath the line, with virtual lines
 
     -- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
     jump = {
@@ -32,7 +32,23 @@ do
     },
   }
 
-  vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+  -- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+  local function toggle_qf()
+    local qf_open = false
+    for _, win in ipairs(vim.fn.getwininfo()) do
+      if win.quickfix == 1 then
+        qf_open = true
+        break
+      end
+    end
+    if qf_open then
+      vim.cmd('cclose')
+    else
+      vim.cmd('copen')
+    end
+  end
+
+  vim.keymap.set('n', '<leader>q', toggle_qf, { desc = 'Toggle quickfix list' })
 
   vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
@@ -59,6 +75,9 @@ do
   vim.keymap.set("n", "<leader>D", '"_D', { desc = "Delete to EOL into black hole register" })
   vim.keymap.set("x", "<leader>d", '"_d', { desc = "Delete selection into black hole register" })
   vim.keymap.set("x", "<leader>x", '"_x', { desc = "Delete selection into black hole register" })
+  vim.keymap.set('n', 'p', 'p`[=`]', { desc = 'Paste and reindent' })
+  vim.keymap.set('n', 'P', 'P`[=`]', { desc = 'Paste before and reindent' })
+
 
   vim.keymap.set("n", "<leader>rcv", ":e $MYVIMRC<CR>", { desc = "Configure neovim" })
   vim.keymap.set("n", "<leader>rch", ":e ~/.config/hypr/hyprland.lua<CR>", { desc = "Configure Hyprland" })
