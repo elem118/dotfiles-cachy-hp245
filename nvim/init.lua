@@ -10,7 +10,7 @@ require 'autocomplete'
 require 'treesitter_setup'
 
 -- ============================================================
--- SECTION 10: MY PLUGINS 
+-- SECTION 10: MY PLUGINS
 -- ============================================================
 do
   --  Here are some example plugins that I've included in the Kickstart repository.
@@ -31,6 +31,7 @@ do
   require 'plugins.julienvincent_nvim-paredit'
   require 'plugins.vds2212_vim-remotions'
   require 'plugins.christoomey_vim-tmux-navigator'
+  require 'plugins.folke_flash'
   -- require 'plugins.ElmCast_elm-vim'
 end
 
@@ -44,3 +45,4 @@ require 'scripts.tmux_reload'
 require 'scripts.haskell_treesitter_stop'
 require 'scripts.waybar_reload'
 require 'scripts.kmonad_reload'
+require 'scripts.remove_trailing_spaces'

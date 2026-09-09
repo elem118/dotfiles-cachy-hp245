@@ -1,6 +1,6 @@
 vim.pack.add{ gh 'vds2212/vim-remotions' }
 vim.g.remotions_motions = {
-  TtFf = {},  -- keep default f/t/F/T repeat behavior
+  -- TtFf = {},  -- keep default f/t/F/T repeat behavior
   search = {
     backward = "N",
     forward = "n",

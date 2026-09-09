@@ -16,7 +16,6 @@ do
     float = { border = 'rounded', source = 'if_many', wrap = true },
     underline = { severity = { min = vim.diagnostic.severity.WARN } },
 
-    -- Can switch between these as you prefer
     virtual_text = false, -- Text shows up at the end of the line
     virtual_lines = false, -- Text shows up underneath the line, with virtual lines
 
@@ -32,23 +31,7 @@ do
     },
   }
 
-  -- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-  local function toggle_qf()
-    local qf_open = false
-    for _, win in ipairs(vim.fn.getwininfo()) do
-      if win.quickfix == 1 then
-        qf_open = true
-        break
-      end
-    end
-    if qf_open then
-      vim.cmd('cclose')
-    else
-      vim.cmd('copen')
-    end
-  end
-
-  vim.keymap.set('n', '<leader>q', toggle_qf, { desc = 'Toggle quickfix list' })
+  vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
   vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
@@ -75,6 +58,7 @@ do
   vim.keymap.set("n", "<leader>D", '"_D', { desc = "Delete to EOL into black hole register" })
   vim.keymap.set("x", "<leader>d", '"_d', { desc = "Delete selection into black hole register" })
   vim.keymap.set("x", "<leader>x", '"_x', { desc = "Delete selection into black hole register" })
+  vim.keymap.set('n', '<leader>dl', '0d$', { desc = "Delete contents of line", noremap = true })
   vim.keymap.set('n', 'p', 'p`[=`]', { desc = 'Paste and reindent' })
   vim.keymap.set('n', 'P', 'P`[=`]', { desc = 'Paste before and reindent' })
 
@@ -87,11 +71,12 @@ do
   vim.keymap.set("n", "<leader>rckm", ":e ~/.config/kmonad/elempad_2.kbd<CR>", { desc = "Configure kmonad config" })
   vim.keymap.set("n", "<leader>rcki", ":e ~/.config/kitty/kitty.conf<CR>", { desc = "Configure kitty config" })
   vim.keymap.set("n", "<leader>rcx", ":e ~/.config/xremap/config.yml<CR>", { desc = "Configure xremap config"})
+  vim.keymap.set("n", "<leader>rcn", ":e ~/.config/nix/nix.conf<CR>", { desc = "Configure nix config"})
 
   vim.keymap.set("n", "<leader>pwd", ":lcd %:h<CR>", { desc = "Change directory of current window to current file location" })
 
   -- keybinds for working with lua
-  vim.keymap.set("n", "<leader>ur", ":!lua %<cr>", { desc = "Run current Lua file" })
+  vim.keymap.set("n", "<leader>rx", ":!lua %<cr>", { desc = "Run current Lua file" })
 
 end
 
