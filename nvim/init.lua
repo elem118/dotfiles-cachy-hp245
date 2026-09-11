@@ -32,6 +32,7 @@ do
   require 'plugins.vds2212_vim-remotions'
   require 'plugins.christoomey_vim-tmux-navigator'
   require 'plugins.folke_flash'
+  require 'plugins.stevearc_oil'
   -- require 'plugins.ElmCast_elm-vim'
 end
 

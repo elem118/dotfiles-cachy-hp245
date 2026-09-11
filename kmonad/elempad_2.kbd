@@ -4,8 +4,8 @@
   ;; the following is only for the compose feature on x11. on wayland it is compositor specific. No universal way.
   ;; output (uinput-sink "My KMonad output"
   ;;  "sleep 1 && setxkbmap -option compose:ralt")
-  ;; cmp-seq ralt    
-  ;; cmp-seq-delay 500 
+  ;; cmp-seq ralt
+  ;; cmp-seq-delay 500
   ;; key-seq-delay 5
   fallthrough true
   allow-cmd true
@@ -20,14 +20,14 @@
   lctl fn   lmet lalt           spc            ralt rctl
 )
 
-(defalias 
+(defalias
   ct_es (tap-hold-next-release 200 esc lctl)
   tab_met (tap-hold-next-release 200 tab lmet)
   to_l1 (sticky-key 500 (layer-toggle l1))
   to_l3 (sticky-key 500 (layer-toggle l3))
   to_l2 (sticky-key 500 (layer-toggle l2))
   tm (sticky-key 500 (layer-toggle macros))
-  m1 #(s y e d . m u z t a b a . a l i . 9 8 @ g m a i l . c o m :delay 2) 
+  m1 #(s y e d . m u z t a b a . a l i . 9 8 @ g m a i l . c o m :delay 2)
   m2 #(e l e m e n t a r y c o d e r 1 @ g m a i l . c o m :delay 2)
   m3 #(m u z t a b a . t e c h f e s t @ g m a i l . c o m :delay 2)
   m4 #(s p a m 4 f r e e @ p r o t o n m a i l . c o m :delay 2)
@@ -39,40 +39,40 @@
 )
 
 (deflayer l0
-  lsft      XX   @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3 XX  XX  XX  XX  home  
-  @tab_met  q    w    e    r    t    y    u    i    o    p    @to_l2   lalt   @tm  pgup
+  lsft      XX   @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3 XX  XX  XX  XX  home
+  @tab_met  q    w    e    r    t    y    u    i    o    p    @to_l2   XX   @tm  pgup
   @ct_es    a    s    d    f    g    h    j    k    l    ;    @to_l1    ret     pgdn
   bspc      z    x    c    v    b    n    m    .    \\   @to_l3    rsft         end
   caps      fn   lmet lalt           spc            ralt rctl
 )
 
 (deflayer l1
-  lsft      XX  @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3   XX   XX   XX   XX  home  
-  @tab_met  S-q  S-w  S-e  S-r  S-t  S-y  S-u  S-i  S-o  S-p  @to_l2   lalt   XX  pgup
+  lsft      XX  @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3   XX   XX   XX   XX  home
+  @tab_met  S-q  S-w  S-e  S-r  S-t  S-y  S-u  S-i  S-o  S-p  @to_l2   XX   XX  pgup
   @ct_es    S-a  S-s  S-d  S-f  S-g  S-h  S-j  S-k  S-l  S-;  @to_l1   S-ret      pgdn
   bspc      S-z  S-x  S-c  S-v  S-b  S-n  S-m  ,    ^    @to_l3   rsft          end
   caps      fn   lmet lalt           S-spc          ralt rctl
 )
 
 (deflayer l2
-  lsft      XX  @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3   XX   XX   XX   XX  home  
-  @tab_met  1    2    3    4    5    6    7    8    9    0    @to_l2   lalt   XX  pgup
+  lsft      XX  @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3   XX   XX   XX   XX  home
+  @tab_met  1    2    3    4    5    6    7    8    9    0    @to_l2   XX   XX  pgup
   @ct_es    XX   XX   XX   XX   XX   XX   XX   XX   XX   '    @to_l1    ret     pgdn
   bspc      -    =    XX   `    XX   ]    S-.  ?    S-]  @to_l3    rsft         end
   caps      fn   lmet lalt           spc            ralt rctl
 )
 
 (deflayer l3
-  lsft      XX  @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3   XX   XX   XX   XX  home  
-  @tab_met  S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0  @to_l2   lalt   XX  pgup
+  lsft      XX  @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3   XX   XX   XX   XX  home
+  @tab_met  S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0  @to_l2   XX   XX  pgup
   @ct_es    XX   XX   XX   XX   XX   XX   XX   XX   XX   S-'  @to_l1   ret      pgdn
   bspc      S--  S-=  S-\\ S-`  XX   [    S-,  /    S-[  @to_l3    rsft         end
   caps      fn   lmet lalt           spc            ralt rctl
 )
 
 (deflayer macros
-  lsft      XX  @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3   XX   XX   XX   XX  home  
-  @tab_met  @m1  @m2  @m3  @m4  @m5  @m6  XX  XX  XX  XX   @to_l2    lalt    XX    XX
+  lsft      XX  @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3   XX   XX   XX   XX  home
+  @tab_met  @m1  @m2  @m3  @m4  @m5  @m6  XX  XX  XX  XX   @to_l2    XX    XX    XX
   @ct_es    XX  XX  XX  XX  XX  XX  XX  XX  XX   XX    @to_l1    XX       XX
   bspc      @m7  @m8  @m9  XX  XX  XX  XX   XX    XX    @to_l3    XX           XX
   caps      XX   XX   XX           XX            XX XX

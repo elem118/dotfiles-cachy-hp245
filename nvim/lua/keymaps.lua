@@ -6,7 +6,7 @@
 do
   vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-  vim.keymap.set('n', '<leader>cd', '<cmd>Ex<CR>', { desc = 'Open Netrw' })
+  vim.keymap.set('n', '<leader>cd', '<cmd>Oil<CR>', { desc = 'Open Oil' })
 
   -- Diagnostic Config & Keymaps
   --  See `:help vim.diagnostic.Opts`
