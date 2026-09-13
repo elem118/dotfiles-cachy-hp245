@@ -36,6 +36,7 @@
   m7 #(C X M P A 9 8 2 8 F :delay 2)
   m8 #(7 9 8 0 8 6 8 9 4 3 :delay 2)
   m9 #(4 6 9 9 2 5 3 3 0 2 7 3 :delay 2)
+  m10 #(S y e d spc M u z t a b a spc A l i :delay 2)
 )
 
 (deflayer l0
@@ -73,7 +74,7 @@
 (deflayer macros
   lsft      XX  @to_l3 @to_l2  @to_l1   XX   XX   @to_l1   @to_l2  @to_l3   XX   XX   XX   XX  home
   @tab_met  @m1  @m2  @m3  @m4  @m5  @m6  XX  XX  XX  XX   @to_l2    XX    XX    XX
-  @ct_es    XX  XX  XX  XX  XX  XX  XX  XX  XX   XX    @to_l1    XX       XX
+  @ct_es    @m10  XX  XX  XX  XX  XX  XX  XX  XX   XX    @to_l1    XX       XX
   bspc      @m7  @m8  @m9  XX  XX  XX  XX   XX    XX    @to_l3    XX           XX
   caps      XX   XX   XX           XX            XX XX
 )
