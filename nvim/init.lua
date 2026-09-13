@@ -13,26 +13,23 @@ require 'treesitter_setup'
 -- SECTION 10: MY PLUGINS
 -- ============================================================
 do
-  --  Here are some example plugins that I've included in the Kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
   -- require 'kickstart.plugins.debug'
-  require 'plugins.windwp_nvim-autopairs'
   -- require 'kickstart.plugins.neo-tree'
   -- require 'kickstart.plugins.gitsigns' -- adds gitsigns recommended keymaps
-  require 'plugins.lucas-reineke_indent-blankline'
-  require 'plugins.mrcjkb_haskell-tools'
-  vim.pack.add { gh 'neovimhaskell/haskell-vim' }
-  vim.pack.add { gh 'mfussenegger/nvim-dap' }
-  require 'plugins.mfussenegger_nvim-lint'
-  require 'plugins.Olical_conjure'
-  vim.pack.add { gh 'gpanders/nvim-parinfer' }
-  vim.pack.add { gh 'HiPhish/rainbow-delimiters.nvim' }
-  require 'plugins.julienvincent_nvim-paredit'
-  require 'plugins.vds2212_vim-remotions'
-  require 'plugins.christoomey_vim-tmux-navigator'
-  require 'plugins.folke_flash'
-  require 'plugins.stevearc_oil'
+  require 'plugins.nvim-autopairs'
+  require 'plugins.indent-blankline'
+  require 'plugins.haskell-tools'
+  require 'plugins.haskell-vim'
+  require 'plugins.nvim-lint'
+  require 'plugins.conjure'
+  require 'plugins.nvim-paredit'
+  require 'plugins.vim-remotions'
+  require 'plugins.vim-tmux-navigator'
+  require 'plugins.flash'
+  require 'plugins.oil'
+  require 'plugins.nvim-dap'
+  require 'plugins.nvim-parinfer'
+  require 'plugins.rainbow-delimeters'
   -- require 'plugins.ElmCast_elm-vim'
 end
 
