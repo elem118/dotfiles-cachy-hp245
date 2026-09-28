@@ -47,7 +47,7 @@ vim.keymap.set('n', '<leader>hq', ht.repl.quit, { desc = 'Quit current repl' })
 
 -- Custom keymaps
 vim.keymap.set('n', '<leader>hg', ':!ghc %<cr>', { desc = 'Compile current buffer'})
-vim.keymap.set('n', '<leader>hx', ':split<cr>:resize 10<cr>:term runhaskell %<cr>i', { desc = 'Execute current buffer'})
+vim.keymap.set('n', '<leader>hx', ':split<cr>:resize 10<cr>:term runghc %', { desc = 'Execute current buffer'})
 vim.keymap.set('n', '<leader>hrt', ht.repl.cword_type, { desc = 'Type of word under cursor' })
 vim.keymap.set('n', '<leader>hri', ht.repl.cword_info, { desc = 'Ghci info on word' })
 

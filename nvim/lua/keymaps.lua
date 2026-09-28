@@ -59,8 +59,8 @@ do
   vim.keymap.set("x", "<leader>d", '"_d', { desc = "Delete selection into black hole register" })
   vim.keymap.set("x", "<leader>x", '"_x', { desc = "Delete selection into black hole register" })
   vim.keymap.set('n', '<leader>dl', '0d$', { desc = "Delete contents of line", noremap = true })
-  vim.keymap.set('n', 'p', 'p`[=`]', { desc = 'Paste and reindent' })
-  vim.keymap.set('n', 'P', 'P`[=`]', { desc = 'Paste before and reindent' })
+  -- vim.keymap.set('n', 'p', 'p`[=`]', { desc = 'Paste and reindent' })
+  -- vim.keymap.set('n', 'P', 'P`[=`]', { desc = 'Paste before and reindent' })
 
 
   vim.keymap.set("n", "<leader>rcv", ":e $MYVIMRC<CR>", { desc = "Configure neovim" })

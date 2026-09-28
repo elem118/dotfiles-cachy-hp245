@@ -37,11 +37,11 @@
     // Modules configuration - the following block of code was commented out originally
     "hyprland/workspaces": {
         "tooltip" : true,
-        "enable-bar-scroll": true,
-        // "on-scroll-up": "hyprctl dispatch workspace e+1",
-        // "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-scroll-up": "hyprctl eval 'hl.dispatch(hl.dsp.focus({workspace = \"e-1\"}))'",
+        "on-scroll-down": "hyprctl eval 'hl.dispatch(hl.dsp.focus({workspace = \"e+1\"}))'"
     },
     "hyprland/window": {
+        "tooltip" : false,
         "max-length": 40
     },
     "keyboard-state": {

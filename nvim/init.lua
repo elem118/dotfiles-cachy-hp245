@@ -19,7 +19,7 @@ do
   require 'plugins.nvim-autopairs'
   require 'plugins.indent-blankline'
   require 'plugins.haskell-tools'
-  require 'plugins.haskell-vim'
+  -- require 'plugins.haskell-vim'
   require 'plugins.nvim-lint'
   require 'plugins.conjure'
   require 'plugins.nvim-paredit'
@@ -40,7 +40,7 @@ end
 -- MY SCRIPTS
 -- =======================================
 require 'scripts.tmux_reload'
-require 'scripts.haskell_treesitter_stop'
+-- require 'scripts.haskell_treesitter_stop'
 require 'scripts.waybar_reload'
 require 'scripts.kmonad_reload'
 require 'scripts.remove_trailing_spaces'

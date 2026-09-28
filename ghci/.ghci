@@ -3,12 +3,13 @@
 :set prompt-cont "\ESC[1;34mλ | \ESC[5 q"
 :set +m
 :set -fdefer-type-errors
-:set -fno-warn-deferred-type-errors 
+:set -fno-warn-deferred-type-errors
 :set -Wno-type-defaults
 :set -Wno-incomplete-uni-patterns
 :set -Wno-unused-do-bind
 :set -Wno-operator-whitespace
 :set -Wno-missing-signatures
+:set -Wno-x-partial
 
 :def hoogle \s -> return $ ":! hoogle " ++ s
 :def hinfo \s -> return $ ":! hoogle --info " ++ s
