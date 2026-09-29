@@ -30,6 +30,8 @@ do
   require 'plugins.nvim-dap'
   require 'plugins.nvim-parinfer'
   require 'plugins.rainbow-delimeters'
+  require 'plugins.keysound'
+  require 'plugins.tabout'
   -- require 'plugins.ElmCast_elm-vim'
 end
 
